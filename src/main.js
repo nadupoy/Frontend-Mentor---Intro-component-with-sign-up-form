@@ -1,4 +1,4 @@
-// import './style.css'
+import "./style.css";
 import errorIcon from "/images/icon-error.svg";
 // import { setupCounter } from "./counter.js";
 
