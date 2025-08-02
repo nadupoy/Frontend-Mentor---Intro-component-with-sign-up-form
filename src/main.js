@@ -4,18 +4,21 @@ import errorIcon from "/images/icon-error.svg";
 
 document.querySelector("#app").innerHTML = `
   <main>
-  <section>
+  <section class="intro-card">
   <h1>Learn to code by watching others</h1>
   <p>
   See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.
   </p>
   </section>
 
-  <section>
+  <section class="form-card">
+  <div class="free-trial">
   <p>
   <b>Try it free 7 days</b> then $20/mo. thereafter
   </p>
+  </div>
 
+  <div class="form">
   <form>
   <div class="input-field">
   <input type="text" placeholder="First Name">
@@ -40,9 +43,10 @@ document.querySelector("#app").innerHTML = `
   <input type="submit" value="CLAIM YOUR FREE TRIAL">
   </form>
 
-  <p>
+  <p class="agreement">
   By clicking the button you are agreeing to our <b>Terms and Services</b>
   </p>
+  </div>
   </section>
   </main>
 
