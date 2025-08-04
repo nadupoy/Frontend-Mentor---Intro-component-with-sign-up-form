@@ -1,6 +1,6 @@
 import "./style.css";
 import errorIcon from "/images/icon-error.svg";
-// import { setupCounter } from "./counter.js";
+import { submitForm, checkEmailFormat, emptyInputField } from "./script.js";
 
 document.querySelector("#app").innerHTML = `
   <main>
@@ -19,24 +19,24 @@ document.querySelector("#app").innerHTML = `
   </div>
 
   <div class="form">
-  <form>
+  <form id="form">
   <div class="input-field">
-  <input type="text" placeholder="First Name">
+  <input type="text" placeholder="First Name" class="input-textbox">
   <img src="${errorIcon}" alt="error icon" class="error-icon" />
   </div>
   <p class="error-message"><em>First Name cannot be empty</em></p>
   <div class="input-field">
-  <input type="text" placeholder="Last Name">
+  <input type="text" placeholder="Last Name" class="input-textbox">
   <img src="${errorIcon}" alt="error icon" class="error-icon" />
   </div>
   <p class="error-message"><em>Last Name cannot be empty</em></p>
   <div class="input-field">
-  <input type="email" placeholder="Email Address">
+  <input type="email" placeholder="Email Address" class="input-textbox">
   <img src="${errorIcon}" alt="error icon" class="error-icon" />
   </div>
   <p class="error-message"><em>Looks like this is not an email</em></p>
   <div class="input-field">
-  <input type="password" placeholder="Password">
+  <input type="password" placeholder="Password" class="input-textbox">
   <img src="${errorIcon}" alt="error icon" class="error-icon" />
   </div>
   <p class="error-message"><em>Password cannot be empty</em></p>
@@ -56,5 +56,13 @@ document.querySelector("#app").innerHTML = `
   </p>
   </footer>
 `;
+
+let form = document.getElementById("form");
+let emailAddress = document.querySelector("[type='email']");
+let inputFields = document.getElementsByClassName("input-textbox");
+
+form.addEventListener("submit", submitForm);
+
+console.log(inputFields);
 
 // setupCounter(document.querySelector("#counter"));
