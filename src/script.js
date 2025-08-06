@@ -20,6 +20,15 @@ export function submitForm(event) {
       submit the form
       }
     */
+    if (inputField.value == false) {
+      let errorIcon = inputField.nextElementSibling;
+      let errorMessage = errorIcon.nextElementSibling;
+
+      errorIcon.style.display = "block";
+      errorMessage.style.display = "block";
+
+      event.preventDefault();
+    }
   }
 
   /*
