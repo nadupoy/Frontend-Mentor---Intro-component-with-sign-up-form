@@ -29,7 +29,7 @@ document.querySelector("#app").innerHTML = `
   <div class="input-field">
   <input type="text" placeholder="Last Name" class="input-textbox">
   <img src="${errorIcon}" alt="error icon" class="error-icon" />
-  <p class="error-message"><em>First Name cannot be empty</em></p>
+  <p class="error-message"><em>Last Name cannot be empty</em></p>
   </div>
 
   <div class="input-field">
@@ -64,7 +64,3 @@ document.querySelector("#app").innerHTML = `
 let form = document.getElementById("form");
 
 form.addEventListener("submit", submitForm);
-
-console.log(inputFields);
-
-// setupCounter(document.querySelector("#counter"));
