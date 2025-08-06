@@ -1,21 +1,32 @@
-// export function setupCounter(element) {
-//   let counter = 0
-//   const setCounter = (count) => {
-//     counter = count
-//     element.innerHTML = `count is ${counter}`
-//   }
-//   element.addEventListener('click', () => setCounter(counter + 1))
-//   setCounter(0)
-// }
-
 /*
-Recieve an error message when the form is submitted if:
+Receive an error message when the form is submitted if:
 - Any input field is empty.
 - The email address is not formatted correctly.
 */
 
-export function submitForm() {}
+export function submitForm(event) {
+  // Checks for any empty field. Displays error message if any is false. Does not submit the form.
+  // Checks for email address format. Displays error message if format is incorrect. Does not submit the form.
+  // Otherwise submits the form.
 
-export function checkEmailFormat() {}
+  let inputFields = document.getElementsByClassName("input-textbox");
+  let emailAddress = document.querySelector("[type='email']");
 
-export function emptyInputField() {}
+  for (let inputField of inputFields) {
+    /*
+    if (the value of inputField is empty) {
+    display the error message and don't submit the form
+    } else {
+      submit the form
+      }
+    */
+  }
+
+  /*
+  if (the email address is not formatted correctly) {
+  display its error message and don't submit the form
+  } else {
+    submit the form
+    }
+  */
+}
