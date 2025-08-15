@@ -44,7 +44,7 @@ document.querySelector("#app").innerHTML = `
   <p class="error-message"><em>Password cannot be empty</em></p>
   </div>
 
-  <input type="submit" value="CLAIM YOUR FREE TRIAL">
+  <input type="submit" formnovalidate value="CLAIM YOUR FREE TRIAL">
   </form>
 
   <p class="agreement">
