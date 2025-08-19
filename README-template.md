@@ -11,10 +11,8 @@ This is a solution to the [Intro component with sign up form challenge on Fronte
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -55,59 +53,47 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+1. **Regular Expressions:**
+- [Sets](https://javascript.info/regexp-character-sets-and-ranges#sets): e.g. `[eao]` searches for any of the characters 'e', 'a' or 'o'.
+- [Ranges](https://javascript.info/regexp-character-sets-and-ranges#ranges): e.g. `[a-z]` is a character in range from 'a' to 'z'.
+- [Quantifiers](https://javascript.info/regexp-quantifiers#shorthands): `[...]+` means a sequence of one or more of the characters in the square brackets.
 
-To see how you can add code snippets, see below:
+I used the above to create a regular expression pattern to verify the email input format:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+let pattern = "[a-zA-Z0-9]+@[a-z]+\.com";
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+2. **Regular Expressions Syntax**
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+I used the 'long' syntax i.e. `new RegExp()` as it is more often used to create a regexp "on the fly" from a dynamically generated string. I think this would be better suited for the email verification process:
 
-### Continued development
+```js
+let regExp = new RegExp(pattern);
+```
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+3. **Git Merge**
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I created a new branch called `code-refactor` to refactor the code and create an event handler when the form is submitted that checks all the parameters in the design brief.
+
+Eventually, `code-refactor` ended up being seven commits ahead of `main` branch. I have had merge conflicts in the past in similar situations but with this project I've learnt that as long as `main` branch remains unchanged when working on a different branch, merging back into the `main` branch is seamless without conflict, with all the commits being included in the working tree.
+
+4. **Git Branch**
+
+I learnt how to push a new branch and set its remote upstream, using the following terminal command:
+
+```
+git push --set-upstream origin branch-name
+```
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [javascript.info](https://javascript.info/regular-expressions) - This helped me with regular expressions.
+- [w3schools](https://www.w3schools.com/git/git_branch.asp?remote=github) - This helped me in version control in Git with creating, working on and merging branches without conflict.
+- [vite.dev](https://vite.dev/guide) - This helped with project scaffolding using Vite.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- LinkedIn - [Grace Sampao](https://www.linkedin.com/in/grace-sampao-49a3129b)
+- Frontend Mentor - [@nadupoy](https://www.frontendmentor.io/profile/nadupoy)
 - Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
-
-
-To push the current branch and set the remote as upstream, use
-
-    git push --set-upstream origin code-refactor
-
-To have this happen automatically for branches without a tracking
-upstream, see 'push.autoSetupRemote' in 'git help config'.
